@@ -13,7 +13,7 @@ Small moving target detection aims to exploit spatio-temporal information to dis
 To address these limitations, we propose a **Refined Spatio-Temporal Pipeline Representation Network (RPRNet)** for infrared weak and small moving target detection. The core idea is to preserve and consistently propagate joint spatio-temporal features, enabling refined pipeline-wise representation of target and background spatio-temporal characteristics for high-precision detection under dynamic backgrounds. Specifically, we first design a **Spatio-Temporal Pipeline Representation Block (STRB)**, which adopts a unified three-dimensional spatio-temporal modeling mechanism to capture complex spatio-temporal variation patterns. We then introduce **IG-GSM**, a cross-scale spatio-temporal information preservation module that adaptively regulates high-resolution upsampling points for small targets, enhancing the continuity and consistency of target–background spatio-temporal pipeline representations. Finally, we propose **SPGloss**, which incorporates a progressive edge-expansion guidance mechanism to alleviate class imbalance while providing more stable supervision for weak targets, thereby maintaining the integrity of spatio-temporal pipelines.
 
 ## Architecture
-<img width="1227" height="773" alt="image" src="https://github.com/user-attachments/assets/190838f5-f3cb-485e-95fc-367fff547297" />
+<img width="600" height="350" alt="image" src="https://github.com/user-attachments/assets/190838f5-f3cb-485e-95fc-367fff547297" />
 
 
 
