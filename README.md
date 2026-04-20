@@ -35,6 +35,7 @@ You can switch datasets by modifying the `--dataset_names` argument. For other c
 ```bash
 python test.py
 ```
+The pretrained model weights are provided in the log directory.
 You can switch datasets by modifying the `--dataset_names` argument. For other configurable parameters, please refer to `test.py`.
 
 
