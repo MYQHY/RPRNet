@@ -50,6 +50,9 @@ You can switch datasets by modifying the `--dataset_names` argument. For other c
 We would like to thank [Yuan](https://github.com/xdFai/SCTransNet) et al. for making their code publicly available. Part of the code in this repository is collected and adapted from their work.
 
 ## Cite
+If you find the code useful, please consider citing our paper using the following BibTeX entry.
+
+```bibtex
 @ARTICLE{11676423,
   author={Mu, Yongqi and Zhi, Xiyang and Bao, Guangzhen and Huang, Yuanxin and Gong, Jinnan and Jiang, Shikai and Hu, Jianming and Wang, Xinkai and Wang, Maoxuan},
   journal={IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing}, 
@@ -59,5 +62,7 @@ We would like to thank [Yuan](https://github.com/xdFai/SCTransNet) et al. for ma
   number={},
   pages={1-17},
   keywords={Pipelines;Object detection;Modeling;Convolution;Signal detection;Probability;Personal digital devices;Sequential analysis;Learning (artificial intelligence);Pixel;Adaptive upsampling;infrared small moving target detection;refined representation;spatio-temporal pipeline},
-  doi={10.1109/JSTARS.2026.3730651}}
+  doi={10.1109/JSTARS.2026.3730651}
+}
+```
 
