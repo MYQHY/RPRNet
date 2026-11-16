@@ -214,7 +214,7 @@ def train():
                     gt_mask = gt_mask/255
 
                     loss = get_loss.forward(pred,gt_mask)
-                    pred = pred['main_logit']
+                    pred = torch.sigmoid(pred['main_logit'])
                     test_loss.append(loss.detach().cpu())
                     eval_mIoU.update((pred > opt.threshold).cpu(), gt_mask.cpu())
                     eval_PD_FA.update((pred[0, 0, :, :] > opt.threshold).cpu(), gt_mask[0, 0, :, :], [opt.patchSize,opt.patchSize])
@@ -284,7 +284,7 @@ def test(save_pth):
             pred = net.forward(img)
             gt_mask = gt_mask.unsqueeze(1)
             gt_mask = gt_mask/255
-            pred = pred['main_logit']
+            pred = torch.sigmoid(pred['main_logit'])
             _,_, w, h = pred.shape      
             scale = min(w / ori_w, h / ori_h)
             nw = int(ori_w * scale)
@@ -333,8 +333,8 @@ class Net(nn.Module):
 
 
     def STDloss(self, output, gt_masks, eps=1e-6):
-        main_logit = output["main_logit"]
-        sides = output["side_logits"]   
+        main_logit = torch.sigmoid(output["main_logit"])
+        sides = [torch.sigmoid(s) for s in output["side_logits"]]
         alpha = 0.8
         gamma = 2.0
         Batchsize,_,_,_ = main_logit.shape  
