@@ -435,7 +435,7 @@ def test():
             gt_mask = gt_mask.to(device, non_blocking=True)
             # CPU
             output = net.forward(img)
-            pred = output["main_logit"]
+            pred = torch.sigmoid(output["main_logit"])
 
             gt_mask = gt_mask.unsqueeze(1)
             gt_mask = gt_mask/255

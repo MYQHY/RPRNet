@@ -74,11 +74,7 @@ class MultiScaleSegHead(nn.Module):
         gam = torch.softmax(self.gamma, dim=0)
         fused = self.fuse(torch.cat([l0u, l1u, l2u, l3u], dim=1))
         main = fused + (gam[0]*l0u + gam[1]*l1u + gam[2]*l2u + gam[3]*l3u)
-        main = torch.sigmoid(main)
-        l0u = torch.sigmoid(l0u)
-        l1u = torch.sigmoid(l1u)
-        l2u = torch.sigmoid(l2u)
-        l3u = torch.sigmoid(l3u)
+        # 返回 logit：SPGloss 内部用 BCEWithLogits / logsigmoid，评估代码比较门限前再做 sigmoid
         return {"main_logit": main, "side_logits": [l0u, l1u, l2u, l3u]}
 
 
